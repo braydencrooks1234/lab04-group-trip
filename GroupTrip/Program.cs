@@ -5,8 +5,6 @@ const int slicesPerPizza = 8;
 
 
 
-Console.WriteLine("=== Part 1: Road Trip ===");
-
 Console.Write("What was the round trip in miles? ");
 int milesForTheTrip = Convert.ToInt32(Console.ReadLine());
 
@@ -16,46 +14,56 @@ int milesPerGallon = Convert.ToInt32(Console.ReadLine());
 Console.Write("What is the gas price? ");
 double gasPrice = Convert.ToDouble(Console.ReadLine());
 
-Console.WriteLine("How many pizzas will there be? ");
+Console.Write("How many pizzas will there be? ");
 double pizzaAmount = Convert.ToDouble(Console.ReadLine());
 
-Console.WriteLine("What was the price per pizza? ");
+Console.Write("What was the price per pizza? ");
 double pricePerPizza = Convert.ToDouble(Console.ReadLine());
 
 //do the math
 
+double fuelCost = FuelCost(milesForTheTrip, milesPerGallon, gasPrice);
+double pizzaCost = pizzaAmount * pricePerPizza;
+double tripTotal = fuelCost + pizzaCost;
+
 //do the output
 
 Console.WriteLine("");
-Console.WriteLine("Fuel Cost: " + FuelCost(milesForTheTrip, milesPerGallon, gasPrice).ToString("C"));
+Console.WriteLine("=== Part 1: Road Trip ===");
+Console.WriteLine("Fuel cost: " + fuelCost.ToString("C"));
+Console.WriteLine($"Pizza cost: {pizzaCost.ToString("C")}");
+Console.WriteLine("Trip total: " + tripTotal.ToString("C"));
 Console.WriteLine("");
 
-//Pizza Party
 
-//Gather the data
+//Console.WriteLine("=== Part 2: Pizza Party ===");
 
-Console.WriteLine("=== Part 2: Pizza Party ===");
+//List Out Variables
+
+string[] names = { "Ada", "Grace", "Alan", "Katherine" };
+double[] hoursWorked = { 22, 15, 30, 18 };
+double[] hourlyRates = { 13.50, 16.00, 11.20, 14.80 };
 
 //Console.WriteLine("How many people are going? ");
 //int peopleGoing = Convert.ToInt32(Console.ReadLine());
 
 //do the math
 
-double totalSlices = pizzaAmount * slicesPerPizza;
-double slicesPerPerson = totalSlices / (double)peopleGoing;
-double pizzaCost = pizzaAmount * pricePerPizza;
+//double totalSlices = pizzaAmount * slicesPerPizza;
+//double slicesPerPerson = totalSlices / (double)peopleGoing;
+//double pizzaCost = pizzaAmount * pricePerPizza;
 
-Console.WriteLine("");
-Console.WriteLine("Total slices: " + totalSlices.ToString());
-Console.WriteLine("Slices per person: " + slicesPerPerson.ToString("F1"));
-Console.WriteLine("Pizza cost: " + pizzaCost.ToString("C"));
-Console.WriteLine("");
+//Console.WriteLine("");
+//Console.WriteLine("Total slices: " + totalSlices.ToString());
+//Console.WriteLine("Slices per person: " + slicesPerPerson.ToString("F1"));
+//Console.WriteLine("Pizza cost: " + pizzaCost.ToString("C"));
+//Console.WriteLine("");
 
 //Paycheck
 
 //collect data
 
-Console.WriteLine("=== Part 3: Paycheck ===");
+//Console.WriteLine("=== Part 3: Paycheck ===");
 
 //Console.WriteLine("How many hours did you work this week? ");
 //double hoursWorked = Convert.ToDouble(Console.ReadLine());
@@ -67,11 +75,11 @@ Console.WriteLine("=== Part 3: Paycheck ===");
 
 //Print the Output
 
-Console.WriteLine("");
-Console.WriteLine("Gross pay: " + grossPay.ToString("C"));
-Console.WriteLine("Tax withheld: " + taxWithheld.ToString("C"));
-Console.WriteLine("Take home pay: " + takeHomePay.ToString("C"));
-Console.WriteLine("");
+//Console.WriteLine("");
+//Console.WriteLine("Gross pay: " + grossPay.ToString("C"));
+//Console.WriteLine("Tax withheld: " + taxWithheld.ToString("C"));
+//Console.WriteLine("Take home pay: " + takeHomePay.ToString("C"));
+//Console.WriteLine("");
 
 
 //Create the methods
